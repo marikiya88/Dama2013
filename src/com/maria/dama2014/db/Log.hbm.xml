@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Log" table="log" schema="public">
+        <id name="fecha" type="timestamp">
+            <column name="fecha" length="29" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="vendedor" class="com.maria.dama2012.db.Vendedor" fetch="select">
+            <column name="autor" />
+        </many-to-one>
+        <property name="comando" type="string">
+            <column name="comando" length="20" />
+        </property>
+        <property name="categoria" type="java.lang.Integer">
+            <column name="categoria" />
+        </property>
+    </class>
+</hibernate-mapping>

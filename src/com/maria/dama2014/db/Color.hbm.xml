@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Color" table="color" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">color_id_seq</param>
+            </generator>
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" not-null="true" />
+        </property>
+        <set name="coloridos" inverse="true">
+            <key>
+                <column name="color_id" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Colorido" />
+        </set>
+    </class>
+</hibernate-mapping>

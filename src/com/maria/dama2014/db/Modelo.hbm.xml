@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Modelo" table="modelo" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">modelo_id_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="proveedor" class="com.maria.dama2012.db.Proveedor" fetch="select">
+            <column name="proveedor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="categoria" class="com.maria.dama2012.db.Categoria" fetch="select">
+            <column name="categoria_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoTalla" class="com.maria.dama2012.db.TipoTalla" fetch="select">
+            <column name="tipo_talla_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="temporada" class="com.maria.dama2012.db.Temporada" fetch="select">
+            <column name="temporada_id" not-null="true" />
+        </many-to-one>
+        <property name="codigo" type="string">
+            <column name="codigo" length="10" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="200" not-null="true" />
+        </property>
+        <property name="fechaAlta" type="date">
+            <column name="fecha_alta" length="13" />
+        </property>
+        <set name="prendas" inverse="true">
+            <key>
+                <column name="modelo_id" not-null="true" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Prenda" />
+        </set>
+        <set name="tallajes" inverse="true">
+            <key>
+                <column name="modelo_id" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Tallaje" />
+        </set>
+        <set name="coloridos" inverse="true">
+            <key>
+                <column name="modelo_id" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Colorido" />
+        </set>
+    </class>
+</hibernate-mapping>

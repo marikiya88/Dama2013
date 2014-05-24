@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Prenda" table="prenda" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">prenda_id_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="tallaje" class="com.maria.dama2012.db.Tallaje" fetch="select">
+            <column name="tallaje_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="colorido" class="com.maria.dama2012.db.Colorido" fetch="select">
+            <column name="colorido_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="estadoPrenda" class="com.maria.dama2012.db.EstadoPrenda" fetch="select">
+            <column name="estado_id" />
+        </many-to-one>
+        <many-to-one name="modelo" class="com.maria.dama2012.db.Modelo" fetch="select">
+            <column name="modelo_id" not-null="true" />
+        </many-to-one>
+        <property name="fechaEntrada" type="date">
+            <column name="fecha_entrada" length="13" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="referencia" length="10" />
+        </property>
+        <property name="precioCompra" type="double">
+            <column name="precio_compra" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="precioVentaRecomendado" type="double">
+            <column name="precio_venta_recomendado" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="precioVentaActual" type="double">
+            <column name="precio_venta_actual" precision="17" scale="17" not-null="true" />
+        </property>
+        <set name="ventas" inverse="true">
+            <key>
+                <column name="id_prenda" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Venta" />
+        </set>
+    </class>
+</hibernate-mapping>

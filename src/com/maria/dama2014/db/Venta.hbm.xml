@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Venta" table="venta" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">venta_id_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="ticket" class="com.maria.dama2012.db.Ticket" fetch="select">
+            <column name="id_ticket" />
+        </many-to-one>
+        <many-to-one name="prenda" class="com.maria.dama2012.db.Prenda" fetch="select">
+            <column name="id_prenda" />
+        </many-to-one>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="17" scale="17" />
+        </property>
+    </class>
+</hibernate-mapping>

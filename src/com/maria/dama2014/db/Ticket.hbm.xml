@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Ticket" table="ticket" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">ticket_id_seq</param>
+            </generator>
+        </id>
+        
+        <property name="fecha" type="date">
+            <column name="fecha" length="13" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="1"/>
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="17" scale="17" />
+        </property>
+        <property name="tarjeta" type="java.lang.Boolean">
+            <column name="tarjeta" />
+        </property>
+        <set name="ventas" inverse="true" cascade="save-update">
+            <key>
+                <column name="id_ticket" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Venta" />
+        </set>
+    </class>
+</hibernate-mapping>

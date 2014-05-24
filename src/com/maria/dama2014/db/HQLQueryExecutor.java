@@ -1,0 +1,36 @@
+package com.maria.dama2014.db;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+
+/**
+ *
+ * @author Maria
+ */
+public class HQLQueryExecutor {
+
+    public static List executeHQLQuery(String hql) {
+        List resultList = null;
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query q = session.createQuery(hql);
+            resultList = q.list();
+            //displayResult(resultList);
+            session.getTransaction().commit();
+        } catch (HibernateException he) {
+            he.printStackTrace();
+        }
+        
+        return resultList;
+    }
+}

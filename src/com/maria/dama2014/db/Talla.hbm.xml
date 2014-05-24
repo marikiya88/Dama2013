@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.maria.dama2012.db.Talla" table="talla" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">talla_id_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="tipoTalla" class="com.maria.dama2012.db.TipoTalla" fetch="select">
+            <column name="tipo_id" />
+        </many-to-one>
+        <property name="orden" type="int">
+            <column name="orden" not-null="true" />
+        </property>
+        <property name="valor" type="string">
+            <column name="valor" length="5" not-null="true" />
+        </property>
+        <set name="tallajes" inverse="true">
+            <key>
+                <column name="talla_id" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Tallaje" />
+        </set>
+    </class>
+</hibernate-mapping>

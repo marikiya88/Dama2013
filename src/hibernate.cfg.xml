@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- SQL dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <!-- Database connection settings -->
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/dama</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">marikiya88</property>
+    <!-- Enable Hibernate's automatic session context management  -->
+    <property name="current_session_context_class">thread</property>
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <mapping resource="com/maria/dama2012/db/Log.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Vendedor.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Venta.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Ticket.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Prenda.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/EstadoPrenda.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Tallaje.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Colorido.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Modelo.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Talla.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/TipoTalla.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Color.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Temporada.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Proveedor.hbm.xml"/>
+    <mapping resource="com/maria/dama2012/db/Categoria.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

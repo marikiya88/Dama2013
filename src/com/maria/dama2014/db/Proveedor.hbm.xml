@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    
+    <class name="com.maria.dama2012.db.Proveedor" table="proveedor" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">proveedor_id_seq</param>
+            </generator>
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" />
+        </property>
+        <property name="cp" type="string">
+            <column name="cp" length="5" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="50" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="30" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="9" />
+        </property>
+        <property name="movil" type="string">
+            <column name="movil" length="9" />
+        </property>
+        <property name="representante" type="string">
+            <column name="representante" length="50" />
+        </property>
+        <property name="telefonoRepresentante" type="string">
+            <column name="telefono_representante" length="9" />
+        </property>
+        <property name="comentarios" type="string">
+            <column name="comentarios" length="200" />
+        </property>
+        <property name="fechaAlta" type="date">
+            <column name="fecha_alta" length="13" />
+        </property>
+        <set name="modelos" inverse="true">
+            <key>
+                <column name="proveedor_id" not-null="true" />
+            </key>
+            <one-to-many class="com.maria.dama2012.db.Modelo" />
+        </set>
+    </class>
+</hibernate-mapping>

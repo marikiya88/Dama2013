@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="dama" match-schema="public"/>
+  <table-filter match-name="modelo"/>
+  <table-filter match-name="log"/>
+  <table-filter match-name="spatial_ref_sys"/>
+  <table-filter match-name="prenda"/>
+  <table-filter match-name="ticket"/>
+  <table-filter match-name="vendedor"/>
+  <table-filter match-name="venta"/>
+  <table-filter match-name="estado_prenda"/>
+  <table-filter match-name="categoria"/>
+  <table-filter match-name="temporada"/>
+  <table-filter match-name="talla"/>
+  <table-filter match-name="tipo_talla"/>
+  <table-filter match-name="tallaje"/>
+  <table-filter match-name="color"/>
+  <table-filter match-name="colorido"/>
+  <table-filter match-name="proveedor"/>
+</hibernate-reverse-engineering>
