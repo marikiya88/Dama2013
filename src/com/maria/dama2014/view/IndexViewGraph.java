@@ -4,6 +4,10 @@
  */
 package com.maria.dama2014.view;
 
+import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByCodigoInterfaz;
+import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByProvNameViewText;
+import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByprovNameInterfaz;
+import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByCodigoViewText;
 import com.maria.dama2014.controller.IndexController;
 import com.maria.dama2014.view.almacen.*;
 import java.awt.BorderLayout;
@@ -13,9 +17,10 @@ import javax.swing.JFrame;
  *
  * @author Maria
  */
-public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
+public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz {
 
     IndexController controller;
+
     /**
      * Creates new form IndexView
      */
@@ -32,10 +37,15 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         option1Menu = new javax.swing.JMenu();
         almacenMenu = new javax.swing.JMenu();
         consultaAlmacenMenu = new javax.swing.JMenu();
+        consultaCodigoMenuItem = new javax.swing.JMenuItem();
+        consultaProvMenuItem = new javax.swing.JMenuItem();
+        consultaDescrMenuItem = new javax.swing.JMenuItem();
+        consultaFamiliaMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         proveedorMenu = new javax.swing.JMenu();
         proveedorMenuViewItem = new javax.swing.JMenuItem();
@@ -48,6 +58,8 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
         jMenu3 = new javax.swing.JMenu();
         configMenu = new javax.swing.JMenu();
 
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         option1Menu.setText("File");
@@ -56,6 +68,29 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
         almacenMenu.setText("Almacen");
 
         consultaAlmacenMenu.setText("Consulta");
+
+        consultaCodigoMenuItem.setText("Por código");
+        consultaCodigoMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaCodigoMenuItemActionPerformed(evt);
+            }
+        });
+        consultaAlmacenMenu.add(consultaCodigoMenuItem);
+
+        consultaProvMenuItem.setText("Por proveedor");
+        consultaProvMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaProvMenuItemActionPerformed(evt);
+            }
+        });
+        consultaAlmacenMenu.add(consultaProvMenuItem);
+
+        consultaDescrMenuItem.setText("Por descripción");
+        consultaAlmacenMenu.add(consultaDescrMenuItem);
+
+        consultaFamiliaMenuItem.setText("Por familia");
+        consultaAlmacenMenu.add(consultaFamiliaMenuItem);
+
         almacenMenu.add(consultaAlmacenMenu);
 
         jMenu1.setText("Alta de ");
@@ -145,20 +180,34 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
 
     }//GEN-LAST:event_familiaMenuViewItemActionPerformed
 
+    private void consultaCodigoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaCodigoMenuItemActionPerformed
+
+        ConsultaAlmacenByCodigoInterfaz view = new ConsultaAlmacenByCodigoViewText();
+        view.run(this);
+    }//GEN-LAST:event_consultaCodigoMenuItemActionPerformed
+
+    private void consultaProvMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaProvMenuItemActionPerformed
+        ConsultaAlmacenByprovNameInterfaz view = new ConsultaAlmacenByProvNameViewText();
+        view.run(this);
+    }//GEN-LAST:event_consultaProvMenuItemActionPerformed
+
     @Override
     public void run() {
         setVisible(true);
     }
-    
+
     @Override
     public void salir() {
         dispose();
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu almacenMenu;
     private javax.swing.JMenu configMenu;
     private javax.swing.JMenu consultaAlmacenMenu;
+    private javax.swing.JMenuItem consultaCodigoMenuItem;
+    private javax.swing.JMenuItem consultaDescrMenuItem;
+    private javax.swing.JMenuItem consultaFamiliaMenuItem;
+    private javax.swing.JMenuItem consultaProvMenuItem;
     private javax.swing.JMenu familiaMenu;
     private javax.swing.JMenuItem familiaMenuAddItem;
     private javax.swing.JMenuItem familiaMenuViewItem;
@@ -166,6 +215,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu option1Menu;
     private javax.swing.JMenu proveedorMenu;
     private javax.swing.JMenuItem proveedorMenuAddItem;
@@ -177,6 +227,4 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz{
     public void setController(IndexController controller) {
         this.controller = controller;
     }
-
-    
 }
