@@ -6,7 +6,6 @@ package com.maria.dama2014.view;
 
 import com.maria.dama2014.IndexOptions;
 import com.maria.dama2014.controller.IndexController;
-import com.maria.dama2014.model.IndexModel;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +15,7 @@ import java.io.InputStreamReader;
  *
  * @author Maria
  */
-public class IndexViewText {
+public class IndexViewText implements IndexInterfaz{
 
     IndexController controller;
 

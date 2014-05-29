@@ -3,10 +3,10 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="com.maria.dama2012.db.Colorido" table="colorido" schema="public">
+    <class name="com.maria.dama2014.db.Colorido" table="colorido" schema="public">
         <!--
-        <composite-id name="coloridoPK" class="com.maria.dama2012.db.DO_ColoridoPK">
-            <key-many-to-one name="modelo" class="com.maria.dama2012.db.Modelo" fetch="select" column="modelo_id"/>
+        <composite-id name="coloridoPK" class="com.maria.dama2014.db.DO_ColoridoPK">
+            <key-many-to-one name="modelo" class="com.maria.dama2014.db.Modelo" fetch="select" column="modelo_id"/>
             <key-property name="orden" type="int"/>
         </composite-id>
         -->
@@ -16,11 +16,11 @@
                 <param name="sequence">colorido_id_seq</param>
             </generator>
         </id>
-        <many-to-one name="modelo" class="com.maria.dama2012.db.Modelo" fetch="select">
+        <many-to-one name="modelo" class="com.maria.dama2014.db.Modelo" fetch="select">
             <column name="modelo_id" />
         </many-to-one> 
         
-        <many-to-one name="color" class="com.maria.dama2012.db.Color" fetch="select">
+        <many-to-one name="color" class="com.maria.dama2014.db.Color" fetch="select">
             <column name="color_id" />
         </many-to-one>
         <property name="orden" type="int">
@@ -30,7 +30,7 @@
             <key>
                 <column name="colorido_id" not-null="true" />
             </key>
-            <one-to-many class="com.maria.dama2012.db.Prenda" />
+            <one-to-many class="com.maria.dama2014.db.Prenda" />
         </set>
     </class>
 </hibernate-mapping>

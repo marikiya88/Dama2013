@@ -5,13 +5,13 @@
 package com.maria.dama2014.view;
 
 import com.maria.dama2014.controller.TicketController;
-import com.maria.dama2012.AceptarTicketDialog;
-import com.maria.dama2012.TableTicketModel;
-import com.maria.dama2012.controller.TicketController;
-import com.maria.dama2012.controller.TicketModel;
+import com.maria.dama2014.AceptarTicketDialog;
+import com.maria.dama2014.TableTicketModel;
+import com.maria.dama2014.controller.TicketController;
+import com.maria.dama2014.controller.TicketModel;
 
-import com.maria.dama2012.config.*;
-import com.maria.dama2012.controller.MainController;
+import com.maria.dama2014.config.*;
+import com.maria.dama2014.controller.MainController;
 import com.maria.dama2014.model.TicketModel;
 
 import java.awt.event.ActionEvent;

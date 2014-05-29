@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="com.maria.dama2012.db.TipoTalla" table="tipo_talla" schema="public">
+    <class name="com.maria.dama2014.db.TipoTalla" table="tipo_talla" schema="public">
         <id name="id" type="int">
             <column name="id" />
             <generator class="sequence">
@@ -17,13 +17,13 @@
             <key>
                 <column name="tipo_id" />
             </key>
-            <one-to-many class="com.maria.dama2012.db.Talla" />
+            <one-to-many class="com.maria.dama2014.db.Talla" />
         </set>
         <set name="modelos" inverse="true">
             <key>
                 <column name="tipo_talla_id" not-null="true" />
             </key>
-            <one-to-many class="com.maria.dama2012.db.Modelo" />
+            <one-to-many class="com.maria.dama2014.db.Modelo" />
         </set>
     </class>
 </hibernate-mapping>

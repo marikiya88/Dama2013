@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="com.maria.dama2012.db.EstadoPrenda" table="estado_prenda" schema="public">
+    <class name="com.maria.dama2014.db.EstadoPrenda" table="estado_prenda" schema="public">
         <id name="id" type="int">
             <column name="id" />
             <generator class="sequence">
@@ -17,7 +17,7 @@
             <key>
                 <column name="estado_id" />
             </key>
-            <one-to-many class="com.maria.dama2012.db.Prenda" />
+            <one-to-many class="com.maria.dama2014.db.Prenda" />
         </set>
     </class>
 </hibernate-mapping>

@@ -16,7 +16,7 @@ public class Ticket implements java.io.Serializable {
     private int id;
     private Date fecha;
     private String tipo;
-    //private Double total;
+    private Double total;
     private Boolean tarjeta;
     private Set ventas = new HashSet(0);
 
@@ -33,7 +33,7 @@ public class Ticket implements java.io.Serializable {
         this.id = id;
         this.fecha = fecha;
         this.tipo = tipo;
-        //this.total = total;
+        this.total = total;
         this.tarjeta = tarjeta;
         this.ventas = ventas;
     }
@@ -63,17 +63,14 @@ public class Ticket implements java.io.Serializable {
     }
 
     public Double getTotal() {
-        
-        for (Prenda p : ventas){
-            
-        }
+        return this.total;
     }
 
-    /*
+    
     public void setTotal(Double total) {
         this.total = total;
     }
-*/
+
     public Boolean getTarjeta() {
         return this.tarjeta;
     }

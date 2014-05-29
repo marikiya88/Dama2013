@@ -4,7 +4,7 @@
 <!-- Generated 17-sep-2013 0:44:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     
-    <class name="com.maria.dama2012.db.Proveedor" table="proveedor" schema="public">
+    <class name="com.maria.dama2014.db.Proveedor" table="proveedor" schema="public">
         <id name="id" type="int">
             <column name="id" />
             <generator class="sequence">
@@ -48,7 +48,7 @@
             <key>
                 <column name="proveedor_id" not-null="true" />
             </key>
-            <one-to-many class="com.maria.dama2012.db.Modelo" />
+            <one-to-many class="com.maria.dama2014.db.Modelo" />
         </set>
     </class>
 </hibernate-mapping>
