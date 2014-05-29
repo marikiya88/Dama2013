@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Maria
  */
-public class ConsultaAlmacenByCodigoViewText extends ConsultaAlmacenByCodigoInterfaz {
+public class ConsultaAlmacenByCodigoViewText extends ConsultaAlmacenInterfaz {
 
     @Override
     public void run(Object parent) {

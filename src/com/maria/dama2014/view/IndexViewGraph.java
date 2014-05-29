@@ -4,14 +4,9 @@
  */
 package com.maria.dama2014.view;
 
-import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByCodigoInterfaz;
-import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByProvNameViewText;
-import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByprovNameInterfaz;
-import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenByCodigoViewText;
 import com.maria.dama2014.controller.IndexController;
 import com.maria.dama2014.view.almacen.*;
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
+import com.maria.dama2014.view.almacen.consulta.*;
 
 /**
  *
@@ -86,9 +81,19 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
         consultaAlmacenMenu.add(consultaProvMenuItem);
 
         consultaDescrMenuItem.setText("Por descripción");
+        consultaDescrMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaDescrMenuItemActionPerformed(evt);
+            }
+        });
         consultaAlmacenMenu.add(consultaDescrMenuItem);
 
         consultaFamiliaMenuItem.setText("Por familia");
+        consultaFamiliaMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaFamiliaMenuItemActionPerformed(evt);
+            }
+        });
         consultaAlmacenMenu.add(consultaFamiliaMenuItem);
 
         almacenMenu.add(consultaAlmacenMenu);
@@ -182,14 +187,24 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
 
     private void consultaCodigoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaCodigoMenuItemActionPerformed
 
-        ConsultaAlmacenByCodigoInterfaz view = new ConsultaAlmacenByCodigoViewText();
+        ConsultaAlmacenInterfaz view = new ConsultaAlmacenByCodigoViewText();
         view.run(this);
     }//GEN-LAST:event_consultaCodigoMenuItemActionPerformed
 
     private void consultaProvMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaProvMenuItemActionPerformed
-        ConsultaAlmacenByprovNameInterfaz view = new ConsultaAlmacenByProvNameViewText();
+        ConsultaAlmacenInterfaz view = new ConsultaAlmacenByProvNameViewText();
         view.run(this);
     }//GEN-LAST:event_consultaProvMenuItemActionPerformed
+
+    private void consultaDescrMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaDescrMenuItemActionPerformed
+        ConsultaAlmacenInterfaz view = new ConsultaAlmacenByDescrViewText();
+        view.run(this);
+    }//GEN-LAST:event_consultaDescrMenuItemActionPerformed
+
+    private void consultaFamiliaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaFamiliaMenuItemActionPerformed
+        ConsultaAlmacenInterfaz view = new ConsultaAlmacenByFamiliaViewText();
+        view.run(this);
+    }//GEN-LAST:event_consultaFamiliaMenuItemActionPerformed
 
     @Override
     public void run() {

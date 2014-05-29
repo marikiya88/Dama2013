@@ -4,8 +4,8 @@
  */
 package com.maria.dama2014.view.almacen.consulta;
 
-import com.maria.dama2014.db.Categoria;
 import com.maria.dama2014.db.Modelo;
+import com.maria.dama2014.view.almacen.consulta.ConsultaAlmacenInterfaz;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Maria
  */
-public class ConsultaAlmacenByProvNameViewText extends ConsultaAlmacenInterfaz {
+public class ConsultaAlmacenByDescrViewText extends ConsultaAlmacenInterfaz {
 
     @Override
     public void run(Object parent) {
@@ -28,11 +28,11 @@ public class ConsultaAlmacenByProvNameViewText extends ConsultaAlmacenInterfaz {
 
             s = "";
             while (s.isEmpty()) {
-                System.out.println("Introduce el nombre del proveedor");
+                System.out.println("Introduce la descripcion");
                 s = bufferRead.readLine();
             }
             
-            List<Modelo> mods = mod.findByProvName(s);
+            List<Modelo> mods = mod.findByDescripcion(s);
             
             if (mods.size() > 0){
                 System.out.println("Se han encontrado " + mods.size() + " modelos");
@@ -55,4 +55,5 @@ public class ConsultaAlmacenByProvNameViewText extends ConsultaAlmacenInterfaz {
     public void salir() {
         return;
     }
+    
 }

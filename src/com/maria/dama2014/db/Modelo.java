@@ -146,29 +146,44 @@ public class Modelo implements java.io.Serializable {
 
         Session session = HibernateSession.getSession();
         session.beginTransaction();
-        
-        List models = session
-                .createCriteria(Modelo.class)
-                .add(Restrictions.like("codigo", pattern))
-                .list();
-        
+
+        List models = session.createCriteria(Modelo.class).add(Restrictions.ilike("codigo", pattern)).list();
+
         return models;
     }
 
-        public List<Modelo> findByProvName(String s) {
+    public List<Modelo> findByProvName(String s) {
         String pattern = "%" + s + "%";
 
         Session session = HibernateSession.getSession();
         session.beginTransaction();
-        
-        List models = session
-                .createCriteria(Modelo.class)
-                .createCriteria("proveedor")
-                .add(Restrictions.like("nombre", pattern))
-                .list();
-        
+
+        List models = session.createCriteria(Modelo.class).createCriteria("proveedor").add(Restrictions.ilike("nombre", pattern)).list();
+
         return models;
     }
 
-        
+    public List<Modelo> findByDescripcion(String s) {
+        String pattern = "%" + s + "%";
+
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+
+        List models = session.createCriteria(Modelo.class).add(Restrictions.ilike("descripcion", pattern)).list();
+
+        return models;
+    }
+
+    public List<Modelo> findByFamilia(String s) {
+        String pattern = "%" + s + "%";
+
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+
+        List models = session.createCriteria(Modelo.class)
+                .createCriteria("categoria")
+                .add(Restrictions.ilike("descripcion", pattern)).list();
+
+        return models;
+    }
 }
