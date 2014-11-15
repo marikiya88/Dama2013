@@ -10,15 +10,19 @@ import com.maria.dama2014.view.almacen.proveedor.AddProveedorViewText;
 import com.maria.dama2014.view.almacen.proveedor.EditProveedorViewText;
 import com.maria.dama2014.view.almacen.proveedor.AddProveedorInterfaz;
 import com.maria.dama2014.Config;
-import com.maria.dama2014.IndexOptions;
 import com.maria.dama2014.model.MenuAlmacenModel;
 import com.maria.dama2014.view.almacen.MenuAlmacenOptionsEnum;
-import com.maria.dama2014.model.MenuVentaModel;
-import com.maria.dama2014.model.TicketModel;
 import com.maria.dama2014.view.IndexViewText;
-import com.maria.dama2014.view.TicketView;
 import com.maria.dama2014.view.almacen.*;
+import com.maria.dama2014.view.almacen.categoria.AddCategoriaInterfaz;
+import com.maria.dama2014.view.almacen.categoria.AddCategoriaViewText;
+import com.maria.dama2014.view.almacen.categoria.ListCategoriasInterfaz;
+import com.maria.dama2014.view.almacen.categoria.ListCategoriasViewText;
 import com.maria.dama2014.view.almacen.proveedor.*;
+import com.maria.dama2014.view.almacen.temporada.AddTemporadaInterfaz;
+import com.maria.dama2014.view.almacen.temporada.AddTemporadaViewText;
+import com.maria.dama2014.view.almacen.temporada.ListTemporadasInterfaz;
+import com.maria.dama2014.view.almacen.temporada.ListTemporadasViewText;
 import java.awt.event.ActionEvent;
 
 /**
@@ -49,9 +53,21 @@ public class MenuAlmacenController {
             System.out.println("Pulso editar proveedor");
             editProveedor();
             view.run();
-        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_FAMILY.toString())) {
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_CATEG.toString())) {
             System.out.println("Pulso añadir familia");
-            addFamilia();
+            addCategoria();
+            view.run();
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.VIEW_CATEG.toString())) {
+            System.out.println("Pulso añadir familia");
+            viewCategorias();
+            view.run();
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_SEASON.toString())) {
+            System.out.println("Pulso añadir temporada");
+            addTemporada();
+            view.run();
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.VIEW_SEASON.toString())) {
+            System.out.println("Pulso ver temporadas");
+            viewTemporadas();
             view.run();
         } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_GARMENT.toString())) {
             System.out.println("Pulso añadir prenda");
@@ -62,7 +78,10 @@ public class MenuAlmacenController {
         } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_SIZETYPE.toString())) {
             System.out.println("Pulso devolucion");
             view.run();
-        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.EXIT.toString())) {
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.STATS_PROV.toString())) {
+            System.out.println("Estadisticas de proveedor");
+            statsProveedores();
+        }else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.EXIT.toString())) {
             System.out.println("Pulso salir");
             backToPreviousView();
         } else {
@@ -84,6 +103,7 @@ public class MenuAlmacenController {
         indexV.run();
     }
 
+    /************ PROVEEDOR ************************************************/
     private void addProveedor() {
         AddProveedorInterfaz addProvView = new AddProveedorViewText();
         // arrancar la vista
@@ -102,15 +122,41 @@ public class MenuAlmacenController {
     private void viewProveedores() {
         ListProveedoresInterfaz listProvView = 
                 (Config.getTextMode() ? new ListProveedoresViewText() : new ListProveedoresViewPanel());
-        
         // arrancar la vista
-        listProvView.run(view);
+        listProvView.run(null);
+    }
+    
+    private void statsProveedores() {
+        StatsProveedoresInterfaz view =
+                new StatsProveedoresViewText();
+        view.run();
     }
 
-
-    private void addFamilia() {
-        AddFamiliaInterfaz addFamView = new AddFamiliaViewText();
+    /************ FAMILIA ************************************************/
+    private void addCategoria() {
+        AddCategoriaInterfaz addCatView = new AddCategoriaViewText();
         // arrancar la vista
-        addFamView.run();
+        addCatView.run();
+    }
+    
+    private void viewCategorias() {
+        ListCategoriasInterfaz listCatView =  new ListCategoriasViewText();
+        
+        // arrancar la vista
+        listCatView.run(view);
+    }
+    
+    /************ TEMPORADA ************************************************/
+    private void addTemporada() {
+        AddTemporadaInterfaz addTempView = new AddTemporadaViewText();
+        // arrancar la vista
+        addTempView.run();
+    }
+    
+    private void viewTemporadas() {
+        ListTemporadasInterfaz listTempView =  new ListTemporadasViewText();
+        
+        // arrancar la vista
+        listTempView.run(view);
     }
 }

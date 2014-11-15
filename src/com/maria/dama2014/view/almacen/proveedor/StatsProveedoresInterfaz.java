@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.maria.dama2014.view.almacen;
+package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.controller.MenuAlmacenController;
 
@@ -10,7 +10,7 @@ import com.maria.dama2014.controller.MenuAlmacenController;
  *
  * @author Maria
  */
-public interface AddFamiliaInterfaz {
+public interface StatsProveedoresInterfaz {
     
     public void run();
 

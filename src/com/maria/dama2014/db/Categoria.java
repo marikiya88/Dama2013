@@ -78,6 +78,11 @@ public class Categoria implements java.io.Serializable {
         this.modelos = modelos;
     }
 
+    @Override
+    public String toString(){
+        return "Categoria{" + "id=" + id + ", Descripcion=" + descripcion +'}';
+    }
+    
     public void newCategoria() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
@@ -89,7 +94,7 @@ public class Categoria implements java.io.Serializable {
         System.out.println("He insertado bien con identificador " + nuevoId);
     }
 
-    public List<Categoria> listFamilias() {
+    public List<Categoria> listCategorias() {
         Session session = HibernateSession.getSession();
         session.beginTransaction();
 
@@ -97,4 +102,15 @@ public class Categoria implements java.io.Serializable {
 
         return cats;
     }
+    
+    public Categoria getById(int id) {
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+
+        Categoria temp = (Categoria) session.get(Categoria.class, id);
+        session.getTransaction().commit();
+        
+        return temp;
+    }
+
 }

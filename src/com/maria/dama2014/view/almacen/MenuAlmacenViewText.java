@@ -5,7 +5,6 @@
 package com.maria.dama2014.view.almacen;
 
 import com.maria.dama2014.controller.MenuAlmacenController;
-import com.maria.dama2014.controller.MenuVentaController;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.IOException;

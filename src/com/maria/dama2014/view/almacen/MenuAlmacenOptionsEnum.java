@@ -12,9 +12,13 @@ public enum MenuAlmacenOptionsEnum {
    VIEW_PROV,
    ADD_PROV, 
    EDIT_PROV,
-   ADD_FAMILY, 
+   ADD_CATEG,
+   VIEW_CATEG,
    ADD_SIZETYPE,
+   ADD_SEASON,
+   VIEW_SEASON,
    ADD_MODEL,
    ADD_GARMENT,
+   STATS_PROV,
    EXIT
 }

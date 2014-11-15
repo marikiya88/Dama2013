@@ -5,15 +5,10 @@
 package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.controller.EditProveedorController;
-import com.maria.dama2014.controller.IndexController;
 import com.maria.dama2014.db.Proveedor;
-import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  *
