@@ -23,8 +23,8 @@ public class start {
         // iniciar conexión Hibernate
         HibernateSession s = new HibernateSession();
         
-        //IndexInterfaz indexV = new IndexViewText();
-        IndexInterfaz indexV = new IndexViewGraph();
+        IndexInterfaz indexV = new IndexViewText();
+        //IndexInterfaz indexV = new IndexViewGraph();
         IndexController indexC = new IndexController(indexV);
         indexV.setController(indexC);
         

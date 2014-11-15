@@ -5,20 +5,20 @@
 package com.maria.dama2014.view.almacen;
 
 import com.maria.dama2014.controller.MenuAlmacenController;
-import com.maria.dama2014.db.Proveedor;
+import com.maria.dama2014.db.Categoria;
 
 /**
  *
  * @author Maria
  */
-public class MenuListProveedoresInterfaz extends javax.swing.JPanel{
-    
-    Proveedor prov;
+public class ListFamiliasInterfaz extends javax.swing.JPanel{
 
-    public MenuListProveedoresInterfaz() {
-        prov = new Proveedor();
+    Categoria cat;
+
+    public ListFamiliasInterfaz() {
+        cat = new Categoria();
     }
-    
+
     
     public void run(Object parent){}
 

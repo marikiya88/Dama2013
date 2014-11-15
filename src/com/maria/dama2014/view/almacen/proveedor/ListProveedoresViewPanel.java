@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.maria.dama2014.view.almacen;
+package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.db.Proveedor;
 import java.util.List;
@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Maria
  */
-public class MenuListProveedoresViewPanel extends MenuListProveedoresInterfaz {
+public class ListProveedoresViewPanel extends ListProveedoresInterfaz {
 
     Proveedor prov;
 
     /**
      * Creates new form MenuListProveedorViewPanel
      */
-    public MenuListProveedoresViewPanel() {
+    public ListProveedoresViewPanel() {
         prov = new Proveedor();
 
         initComponents();

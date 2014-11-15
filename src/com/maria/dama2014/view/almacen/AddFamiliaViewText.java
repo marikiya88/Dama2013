@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  *
  * @author Maria
  */
-public class MenuAddFamiliaViewText implements MenuAddFamiliaInterfaz {
+public class AddFamiliaViewText implements AddFamiliaInterfaz {
 
     Categoria cat = new Categoria();
 

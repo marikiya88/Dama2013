@@ -227,7 +227,7 @@ public class Proveedor implements Serializable {
         Session session = HibernateSession.getSession();
         session.beginTransaction();
 
-        List<Proveedor> provs = session.createQuery("from Proveedor").list();
+        List<Proveedor> provs = session.createQuery("from Proveedor order by id").list();
 
         return provs;
     }

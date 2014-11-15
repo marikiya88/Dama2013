@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.maria.dama2014.view.almacen;
+package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.db.Proveedor;
 import java.io.BufferedReader;
@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  *
  * @author Maria
  */
-public class MenuAddProveedorViewText implements MenuAddProveedorInterfaz {
+public class AddProveedorViewText implements AddProveedorInterfaz {
 
     Proveedor prov = new Proveedor();
 

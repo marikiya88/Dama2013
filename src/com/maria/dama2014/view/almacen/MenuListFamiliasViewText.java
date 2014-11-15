@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Maria
  */
-public class MenuListFamiliasViewText extends MenuListFamiliasInterfaz {
+public class MenuListFamiliasViewText extends ListFamiliasInterfaz {
 
     @Override
     public void run(Object parent) {

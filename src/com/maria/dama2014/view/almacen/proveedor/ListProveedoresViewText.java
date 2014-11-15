@@ -2,19 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.maria.dama2014.view.almacen;
+package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.db.Proveedor;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
 /**
  *
  * @author Maria
  */
-public class MenuListProveedoresViewText extends MenuListProveedoresInterfaz {
+public class ListProveedoresViewText extends ListProveedoresInterfaz {
 
     @Override
     public void run(Object parent) {

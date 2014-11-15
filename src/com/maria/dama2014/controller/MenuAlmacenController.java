@@ -4,6 +4,12 @@
  */
 package com.maria.dama2014.controller;
 
+import com.maria.dama2014.view.almacen.proveedor.EditProveedorInterfaz;
+import com.maria.dama2014.view.almacen.proveedor.ListProveedoresInterfaz;
+import com.maria.dama2014.view.almacen.proveedor.AddProveedorViewText;
+import com.maria.dama2014.view.almacen.proveedor.EditProveedorViewText;
+import com.maria.dama2014.view.almacen.proveedor.AddProveedorInterfaz;
+import com.maria.dama2014.Config;
 import com.maria.dama2014.IndexOptions;
 import com.maria.dama2014.model.MenuAlmacenModel;
 import com.maria.dama2014.view.almacen.MenuAlmacenOptionsEnum;
@@ -12,6 +18,7 @@ import com.maria.dama2014.model.TicketModel;
 import com.maria.dama2014.view.IndexViewText;
 import com.maria.dama2014.view.TicketView;
 import com.maria.dama2014.view.almacen.*;
+import com.maria.dama2014.view.almacen.proveedor.*;
 import java.awt.event.ActionEvent;
 
 /**
@@ -37,6 +44,10 @@ public class MenuAlmacenController {
         } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.VIEW_PROV.toString())) {
             System.out.println("Pulso ver proveedores");
             viewProveedores();
+            view.run();
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.MODIFY_PROV.toString())) {
+            System.out.println("Pulso ver proveedores");
+            editProveedor();
             view.run();
         } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_FAMILY.toString())) {
             System.out.println("Pulso añadir familia");
@@ -74,21 +85,31 @@ public class MenuAlmacenController {
     }
 
     private void addProveedor() {
-        MenuAddProveedorInterfaz addProvView = new MenuAddProveedorViewText();
+        AddProveedorInterfaz addProvView = new AddProveedorViewText();
         // arrancar la vista
         addProvView.run();
     }
+    
+    private void editProveedor() {
+        EditProveedorInterfaz editProvView = 
+                (Config.getTextMode() ? new EditProveedorViewText() : new EditProveedorViewPanel());
+        
+        editProvView.set
+        // arrancar la vista
+        editProvView.run();
+    }
 
     private void viewProveedores() {
-        //MenuListProveedoresInterfaz listProvView = new MenuListProveedoresViewText();
-        MenuListProveedoresInterfaz listProvView = new MenuListProveedoresViewPanel();
+        ListProveedoresInterfaz listProvView = 
+                (Config.getTextMode() ? new ListProveedoresViewText() : new ListProveedoresViewPanel());
+        
         // arrancar la vista
         listProvView.run(view);
     }
 
 
     private void addFamilia() {
-        MenuAddFamiliaInterfaz addFamView = new MenuAddFamiliaViewText();
+        AddFamiliaInterfaz addFamView = new AddFamiliaViewText();
         // arrancar la vista
         addFamView.run();
     }

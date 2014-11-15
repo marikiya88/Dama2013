@@ -18,11 +18,12 @@ public class MenuAlmacenOptions {
         this.options = new HashMap();
         options.put(1, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_PROV, "Nuevo proveedor"));
         options.put(2, new MyKeyValue(MenuAlmacenOptionsEnum.VIEW_PROV, "Ver proveedores"));
-        options.put(3, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_FAMILY, "Nueva familia"));
-        options.put(4, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_SIZETYPE, "Nuevo tipo de talla"));
-        options.put(5, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_MODEL, "Nuevo modelo"));
-        options.put(6, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_GARMENT, "Alta prendas"));
-        options.put(7, new MyKeyValue(MenuAlmacenOptionsEnum.EXIT, "Salir"));
+        options.put(3, new MyKeyValue(MenuAlmacenOptionsEnum.EDIT_PROV, "Editar proveedor"));
+        options.put(4, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_FAMILY, "Nueva familia"));
+        options.put(5, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_SIZETYPE, "Nuevo tipo de talla"));
+        options.put(6, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_MODEL, "Nuevo modelo"));
+        options.put(7, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_GARMENT, "Alta prendas"));
+        options.put(8, new MyKeyValue(MenuAlmacenOptionsEnum.EXIT, "Salir"));
     }
 
     public HashMap<Integer, MyKeyValue> getOptions() {

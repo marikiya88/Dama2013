@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Maria
  */
-public class MenuListFamiliasViewPanel extends MenuListFamiliasInterfaz {
+public class MenuListFamiliasViewPanel extends ListFamiliasInterfaz {
 
 
     /**

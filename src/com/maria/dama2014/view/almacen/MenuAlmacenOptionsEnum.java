@@ -11,6 +11,7 @@ package com.maria.dama2014.view.almacen;
 public enum MenuAlmacenOptionsEnum {
    VIEW_PROV,
    ADD_PROV, 
+   EDIT_PROV,
    ADD_FAMILY, 
    ADD_SIZETYPE,
    ADD_MODEL,

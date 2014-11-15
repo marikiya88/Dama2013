@@ -2,18 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.maria.dama2014.view.almacen;
+package com.maria.dama2014.view.almacen.proveedor;
 
 /**
  *
  * @author Maria
  */
-public class MenuAddProveedorView extends javax.swing.JPanel {
+public class AddProveedorView extends javax.swing.JPanel {
 
     /**
      * Creates new form MenuAddProveedorView
      */
-    public MenuAddProveedorView() {
+    public AddProveedorView() {
         initComponents();
     }
 

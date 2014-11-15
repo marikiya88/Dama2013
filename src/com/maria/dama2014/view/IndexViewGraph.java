@@ -4,6 +4,10 @@
  */
 package com.maria.dama2014.view;
 
+import com.maria.dama2014.view.almacen.proveedor.ListProveedoresInterfaz;
+import com.maria.dama2014.view.almacen.proveedor.AddProveedorViewText;
+import com.maria.dama2014.view.almacen.proveedor.ListProveedoresViewPanel;
+import com.maria.dama2014.view.almacen.proveedor.AddProveedorInterfaz;
 import com.maria.dama2014.controller.IndexController;
 import com.maria.dama2014.view.almacen.*;
 import com.maria.dama2014.view.almacen.consulta.*;
@@ -34,7 +38,10 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        option1Menu = new javax.swing.JMenu();
+        ventaMenu = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         almacenMenu = new javax.swing.JMenu();
         consultaAlmacenMenu = new javax.swing.JMenu();
         consultaCodigoMenuItem = new javax.swing.JMenuItem();
@@ -42,6 +49,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
         consultaDescrMenuItem = new javax.swing.JMenuItem();
         consultaFamiliaMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         proveedorMenu = new javax.swing.JMenu();
         proveedorMenuViewItem = new javax.swing.JMenuItem();
         proveedorMenuAddItem = new javax.swing.JMenuItem();
@@ -49,6 +57,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
         familiaMenuViewItem = new javax.swing.JMenuItem();
         familiaMenuAddItem = new javax.swing.JMenuItem();
         tipoTallaMenu = new javax.swing.JMenu();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         configMenu = new javax.swing.JMenu();
@@ -57,8 +66,19 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        option1Menu.setText("File");
-        jMenuBar1.add(option1Menu);
+        ventaMenu.setText("Venta");
+
+        jMenu4.setText("Recoger");
+
+        jMenuItem2.setText("Modista");
+        jMenu4.add(jMenuItem2);
+
+        jMenuItem3.setText("Apartado");
+        jMenu4.add(jMenuItem3);
+
+        ventaMenu.add(jMenu4);
+
+        jMenuBar1.add(ventaMenu);
 
         almacenMenu.setText("Almacen");
 
@@ -100,6 +120,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
 
         jMenu1.setText("Alta de ");
         almacenMenu.add(jMenu1);
+        almacenMenu.add(jSeparator1);
 
         proveedorMenu.setText("Proveedores");
 
@@ -138,6 +159,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
 
         tipoTallaMenu.setText("Tipos de Tallas");
         almacenMenu.add(tipoTallaMenu);
+        almacenMenu.add(jSeparator2);
 
         jMenu2.setText("jMenu2");
         almacenMenu.add(jMenu2);
@@ -156,7 +178,7 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 647, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,18 +191,18 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
     private void proveedorMenuViewItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proveedorMenuViewItemActionPerformed
 
         //MenuListProveedoresInterfaz view = new MenuListProveedoresViewText();
-        MenuListProveedoresInterfaz view = new MenuListProveedoresViewPanel();
+        ListProveedoresInterfaz view = new ListProveedoresViewPanel();
         view.run(this);
     }//GEN-LAST:event_proveedorMenuViewItemActionPerformed
 
     private void proveedorMenuAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proveedorMenuAddItemActionPerformed
-        MenuAddProveedorInterfaz view = new MenuAddProveedorViewText();
+        AddProveedorInterfaz view = new AddProveedorViewText();
         view.run();
     }//GEN-LAST:event_proveedorMenuAddItemActionPerformed
 
     private void familiaMenuViewItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_familiaMenuViewItemActionPerformed
         //MenuListFamiliasInterfaz view = new MenuListFamiliasViewText();
-        MenuListFamiliasInterfaz view = new MenuListFamiliasViewPanel();
+        ListFamiliasInterfaz view = new MenuListFamiliasViewPanel();
         view.run(this);
 
     }//GEN-LAST:event_familiaMenuViewItemActionPerformed
@@ -229,13 +251,18 @@ public class IndexViewGraph extends javax.swing.JFrame implements IndexInterfaz 
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenu option1Menu;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenu proveedorMenu;
     private javax.swing.JMenuItem proveedorMenuAddItem;
     private javax.swing.JMenuItem proveedorMenuViewItem;
     private javax.swing.JMenu tipoTallaMenu;
+    private javax.swing.JMenu ventaMenu;
     // End of variables declaration//GEN-END:variables
 
     @Override
