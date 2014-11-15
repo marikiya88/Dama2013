@@ -5,6 +5,7 @@
 package com.maria.dama2014.view.almacen.proveedor;
 
 import com.maria.dama2014.controller.EditProveedorController;
+import com.maria.dama2014.controller.IndexController;
 import com.maria.dama2014.db.Proveedor;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -21,8 +22,11 @@ import java.util.Set;
 public class EditProveedorViewText implements EditProveedorInterfaz {
 
     EditProveedorController controller;
-    Proveedor prov = new Proveedor();
 
+    public void setController(EditProveedorController controller){
+        this.controller = controller;
+    }
+    
     @Override
     public void run() {
 
@@ -44,55 +48,54 @@ public class EditProveedorViewText implements EditProveedorInterfaz {
 
         System.out.println("Introduce los datos (pulsa Intro para dejar igual)");
         try {
-            s = "";
-            System.out.println("Id: \t\t" + prov.getId());
-            System.out.println("Nombre: \t\t" + prov.getNombre());
+            System.out.println("Id: " + prov.getId());
+            System.out.print("Nombre: " + prov.getNombre() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setNombre(s);
             }
-            System.out.println("Direccion: \t\t" + prov.getDireccion());
+            System.out.print("Direccion: " + prov.getDireccion() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setDireccion(s);
             }
-            System.out.println("CP: \t\t" + prov.getCp());
+            System.out.print("CP: " + prov.getCp() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setCp(s);
             }
-            System.out.println("Localidad: \t\t" + prov.getLocalidad());
+            System.out.print("Localidad: " + prov.getLocalidad() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setLocalidad(s);
             }
-            System.out.println("Provincia: \t\t" + prov.getProvincia());
+            System.out.print("Provincia: " + prov.getProvincia() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setProvincia(s);
             }
-            System.out.println("Telefono: \t\t" + prov.getTelefono());
+            System.out.print("Telefono: " + prov.getTelefono() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setTelefono(s);
             }
-            System.out.println("Representante: \t\t" + prov.getRepresentante());
+            System.out.print("Representante: " + prov.getRepresentante() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setRepresentante(s);
             }
-            System.out.println("Tel Representante: \t\t" + prov.getTelefonoRepresentante());
+            System.out.print("Tel Representante: " + prov.getTelefonoRepresentante() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setTelefonoRepresentante(s);
             }
-            System.out.println("Comentarios: \t\t" + prov.getComentarios());
+            System.out.print("Comentarios: " + prov.getComentarios() + "\t\t:");
             s = bufferRead.readLine();
             if (!s.isEmpty()) {
                 prov.setComentarios(s);
             }
 
-            prov.newProveedor();
+            prov.updateProveedor();
 
         } catch (IOException e) {
             e.printStackTrace();

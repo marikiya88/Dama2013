@@ -223,6 +223,29 @@ public class Proveedor implements Serializable {
         System.out.println("He insertado bien con identificador " + nuevoId);
     }
 
+    public void updateProveedor() {
+        Session session = HibernateSession.getSession();
+
+        System.out.println("Hasta qui cojo la sesion");
+        session.beginTransaction();
+        System.out.println("Hasta aqui empizo la trnsaccion");
+
+        session.update(this);
+        session.getTransaction().commit();
+
+        System.out.println("He actualizado");
+    }
+    
+     public Proveedor getById(int id) {
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+
+        Proveedor prov = (Proveedor) session.get(Proveedor.class, id);
+        session.getTransaction().commit();
+        
+        return prov;
+    }
+     
     public List<Proveedor> listProveedores() {
         Session session = HibernateSession.getSession();
         session.beginTransaction();

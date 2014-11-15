@@ -6,6 +6,7 @@ package com.maria.dama2014;
 
 import com.maria.dama2014.db.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 /**
  *
@@ -13,14 +14,14 @@ import org.hibernate.Session;
  */
 public class HibernateSession {
     
-    private static Session session;
+    private static SessionFactory sessionFactory;
 
     public HibernateSession() {
-        this.session = HibernateUtil.getSessionFactory().getCurrentSession();
+        this.sessionFactory = HibernateUtil.getSessionFactory();
     }
     
     public static Session getSession(){
-        return session;
+        return sessionFactory.getCurrentSession();
     }
     
     

@@ -45,8 +45,8 @@ public class MenuAlmacenController {
             System.out.println("Pulso ver proveedores");
             viewProveedores();
             view.run();
-        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.MODIFY_PROV.toString())) {
-            System.out.println("Pulso ver proveedores");
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.EDIT_PROV.toString())) {
+            System.out.println("Pulso editar proveedor");
             editProveedor();
             view.run();
         } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_FAMILY.toString())) {
@@ -92,9 +92,9 @@ public class MenuAlmacenController {
     
     private void editProveedor() {
         EditProveedorInterfaz editProvView = 
-                (Config.getTextMode() ? new EditProveedorViewText() : new EditProveedorViewPanel());
+                (Config.getTextMode() ? new EditProveedorViewText() : new EditProveedorView());
         
-        editProvView.set
+        editProvView.setController(new EditProveedorController());
         // arrancar la vista
         editProvView.run();
     }

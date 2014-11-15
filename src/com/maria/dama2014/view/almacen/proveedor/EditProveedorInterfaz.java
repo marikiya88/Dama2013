@@ -4,6 +4,7 @@
  */
 package com.maria.dama2014.view.almacen.proveedor;
 
+import com.maria.dama2014.controller.EditProveedorController;
 import com.maria.dama2014.controller.MenuAlmacenController;
 
 /**
@@ -14,7 +15,7 @@ public interface EditProveedorInterfaz {
     
     public void run();
 
-    //public void setController(MenuAlmacenController controller);
+    public void setController(EditProveedorController controller);
 
     public void salir();
     
