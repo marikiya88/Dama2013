@@ -4,20 +4,15 @@
  */
 package com.maria.dama2014.view;
 
-import com.maria.dama2014.controller.TicketController;
 import com.maria.dama2014.AceptarTicketDialog;
 import com.maria.dama2014.TableTicketModel;
 import com.maria.dama2014.controller.TicketController;
-import com.maria.dama2014.controller.TicketModel;
 
 import com.maria.dama2014.config.*;
-import com.maria.dama2014.controller.MainController;
-import com.maria.dama2014.model.TicketModel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -253,6 +248,7 @@ public class TicketView extends javax.swing.JFrame implements TicketInterfaz{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
     public TicketController getController() {
         return controller;
     }
@@ -309,8 +305,9 @@ public class TicketView extends javax.swing.JFrame implements TicketInterfaz{
         // contar numero de clicks
         if (evt.getClickCount() == 2) {
             //get selected option
-            controller.actionPerformed(new ActionEvent(this, EventoTicket.OPTION, ))
-            controller.selectAction(menuList.getSelectedIndex());
+            //controller.actionPerformed(new ActionEvent(this, EventoTicket.OPTION, ))
+            //controller.selectAction(menuList.getSelectedIndex());
+            return;
         }
     }//GEN-LAST:event_menuListMouseClicked
 
@@ -368,6 +365,9 @@ public class TicketView extends javax.swing.JFrame implements TicketInterfaz{
     private void ticketAceptado() {
         new AceptarTicketDialog(this, numTicket, totalItems, total).setVisible(true);
     }
+    * 
+    * */
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JLabel itemsLabel;

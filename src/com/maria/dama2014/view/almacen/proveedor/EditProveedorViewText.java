@@ -39,7 +39,7 @@ public class EditProveedorViewText implements EditProveedorInterfaz {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Proveedor prov = new Proveedor().getById(id);
+        Proveedor prov = new Proveedor().get(id);
 
         System.out.println("Introduce los datos (pulsa Intro para dejar igual)");
         try {

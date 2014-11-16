@@ -9,6 +9,7 @@ package com.maria.dama2014.view.almacen;
  * @author Maria
  */
 public enum MenuAlmacenOptionsEnum {
+    TEST,
    VIEW_PROV,
    ADD_PROV, 
    EDIT_PROV,

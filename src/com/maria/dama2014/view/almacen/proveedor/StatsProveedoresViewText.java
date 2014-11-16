@@ -4,11 +4,7 @@
  */
 package com.maria.dama2014.view.almacen.proveedor;
 
-import com.maria.dama2014.db.Proveedor;
 import com.maria.dama2014.model.ProveedorStats;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  *

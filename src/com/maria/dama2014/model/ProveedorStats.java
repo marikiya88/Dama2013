@@ -9,10 +9,10 @@ import com.maria.dama2014.db.Proveedor;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
 import org.hibernate.transform.Transformers;
+import org.hibernate.type.DoubleType;
+import org.hibernate.type.Type;
 
 /**
  *
@@ -36,7 +36,10 @@ public class ProveedorStats {
         query.createAlias("modelos", "modelo");
         query.createAlias("modelos.prendas", "prenda");
         
-//        Conditional vendido = Projections.Conditional(
+        Projection vendido = Projections.sqlProjection(
+                "sum(case when prenda.precioVentaActual = 6 then prenda.precioVentaActual else 0 end)", 
+                new String[] { "facturas" }, new Type[] {new DoubleType()});
+                
 //                Restrictions.eq("state", "VENDIDO"), Projections.property("precio_actual"), Projections.constant(0));
 //        Conditional stockPrendas = Projections.Conditional(
 //                Restrictions.eq("state", "STOCK"),  Projections.Constant(1), Projections.Constant(0));
@@ -53,6 +56,7 @@ public class ProveedorStats {
                 .add(Projections.countDistinct("modelo.id"), "numModelos")
                 .add(Projections.rowCount(), "numPrendas")
                 .add(Projections.sum("prenda.precioCompra"), "facturas") 
+                //.add(Projections.sum("case when prenda.precioVentaActual = 6 then prenda.precioVentaActual else 0 end"), "facturas")
                 //.add(Projections.sum(vendido), "facturacionAnual")
                 //.add(Projections.sum(stockPrendas), "prendasStock")
                 //.add(Projections.sum(stockFactura), "stockFactura")

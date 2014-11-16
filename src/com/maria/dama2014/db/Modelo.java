@@ -2,6 +2,7 @@ package com.maria.dama2014.db;
 
 // Generated 17-sep-2013 0:44:35 by Hibernate Tools 3.2.1.GA
 import com.maria.dama2014.HibernateSession;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -140,14 +141,52 @@ public class Modelo implements java.io.Serializable {
     public void setColoridos(Set coloridos) {
         this.coloridos = coloridos;
     }
+    
+    @Override
+    public String toString() {
+        return "Modelo{" + "id=" + id + ", proveedor=" + proveedor + ", categoria=" + categoria + 
+                ", temporada=" + temporada + ", codigo=" + codigo + ", descripcion=" + descripcion + 
+                ", fechaAlta=" + fechaAlta.toString() + ", prendas=" + prendas + 
+                ", talla=" + "cambiar_esto" + '}';
+    }
+        
+    public void newModelo() {
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+        Serializable nuevoId = session.save(this);
+        session.getTransaction().commit();
 
+        System.out.println("He insertado bien con identificador " + nuevoId);
+    }
+    
+    public void updateModelo() {
+        Session session = HibernateSession.getSession();
+
+        session.beginTransaction();
+        session.update(this);
+        session.getTransaction().commit();
+
+        System.out.println("He actualizado");
+    }
+
+    public List<Modelo> listModelos() {
+        Session session = HibernateSession.getSession();
+        session.beginTransaction();
+
+        List<Modelo> modelos = session.createQuery("from Modelo order by id").list();
+
+        return modelos;
+    }
+    
+    /***** FIND ***************/
     public List<Modelo> findByCode(String s) {
         String pattern = "%" + s + "%";
 
         Session session = HibernateSession.getSession();
         session.beginTransaction();
 
-        List models = session.createCriteria(Modelo.class).add(Restrictions.ilike("codigo", pattern)).list();
+        List models = session.createCriteria(Modelo.class)
+                .add(Restrictions.ilike("codigo", pattern)).list();
 
         return models;
     }
@@ -158,7 +197,8 @@ public class Modelo implements java.io.Serializable {
         Session session = HibernateSession.getSession();
         session.beginTransaction();
 
-        List models = session.createCriteria(Modelo.class).createCriteria("proveedor").add(Restrictions.ilike("nombre", pattern)).list();
+        List models = session.createCriteria(Modelo.class)
+                .add(Restrictions.ilike("proveedor.nombre", pattern)).list();
 
         return models;
     }
@@ -169,7 +209,8 @@ public class Modelo implements java.io.Serializable {
         Session session = HibernateSession.getSession();
         session.beginTransaction();
 
-        List models = session.createCriteria(Modelo.class).add(Restrictions.ilike("descripcion", pattern)).list();
+        List models = session.createCriteria(Modelo.class)
+                .add(Restrictions.ilike("descripcion", pattern)).list();
 
         return models;
     }

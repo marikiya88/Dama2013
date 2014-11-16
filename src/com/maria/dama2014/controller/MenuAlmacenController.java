@@ -18,6 +18,7 @@ import com.maria.dama2014.view.almacen.categoria.AddCategoriaInterfaz;
 import com.maria.dama2014.view.almacen.categoria.AddCategoriaViewText;
 import com.maria.dama2014.view.almacen.categoria.ListCategoriasInterfaz;
 import com.maria.dama2014.view.almacen.categoria.ListCategoriasViewText;
+import com.maria.dama2014.view.almacen.consulta.ConsultaGastosMesViewText;
 import com.maria.dama2014.view.almacen.proveedor.*;
 import com.maria.dama2014.view.almacen.temporada.AddTemporadaInterfaz;
 import com.maria.dama2014.view.almacen.temporada.AddTemporadaViewText;
@@ -40,7 +41,12 @@ public class MenuAlmacenController {
     }
 
     public void actionPerformed(ActionEvent evento) {
-        if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_PROV.toString())) {
+        if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.TEST.toString())) {
+            System.out.println("Pulso añadir proveedor");
+            test();
+            view.run();
+
+        } else if (evento.getActionCommand().equals(MenuAlmacenOptionsEnum.ADD_PROV.toString())) {
             System.out.println("Pulso añadir proveedor");
             addProveedor();
             view.run();
@@ -103,6 +109,10 @@ public class MenuAlmacenController {
         indexV.run();
     }
 
+    private void test(){
+        new ConsultaGastosMesViewText().run();
+    }
+    
     /************ PROVEEDOR ************************************************/
     private void addProveedor() {
         AddProveedorInterfaz addProvView = new AddProveedorViewText();

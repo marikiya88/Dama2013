@@ -16,6 +16,7 @@ public class MenuAlmacenOptions {
 
     public MenuAlmacenOptions() {
         this.options = new HashMap();
+        options.put(0, new MyKeyValue(MenuAlmacenOptionsEnum.TEST, "Test actual"));
         options.put(1, new MyKeyValue(MenuAlmacenOptionsEnum.ADD_PROV, "Nuevo proveedor"));
         options.put(2, new MyKeyValue(MenuAlmacenOptionsEnum.VIEW_PROV, "Ver proveedores"));
         options.put(3, new MyKeyValue(MenuAlmacenOptionsEnum.EDIT_PROV, "Editar proveedor"));
